@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/colorBackground">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblPara"
+                android:padding="10dp"
+                android:textSize="@dimen/textView"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtCorreo"
+                android:hint="@string/placeholderPara"
+                android:textColorHint="@color/colorHint"
+                android:textColor="@color/colorText"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblAsunto"
+                android:padding="10dp"
+                android:textSize="@dimen/textView"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAsunto"
+                android:hint="@string/placeholderAsunto"
+                android:textColorHint="@color/colorHint"
+                android:textColor="@color/colorText"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblMensaje"
+                android:padding="10dp"
+                android:textSize="@dimen/textView"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:id="@+id/txtMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:gravity="top"
+                android:hint="@string/placeholderMensaje"
+                android:textColorHint="@color/colorHint"
+                android:textColor="@color/colorText"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorButton"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="@string/btnEnviar"
+                android:textSize="@dimen/btnEnviar"
+                android:textColor="@color/colorTextDark" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

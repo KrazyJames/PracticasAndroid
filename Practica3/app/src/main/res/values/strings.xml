@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Practica3</string>
+    <string name="lblNombre">Nombre:</string>
+    <string name="btnNombre">Aceptar</string>
+</resources>

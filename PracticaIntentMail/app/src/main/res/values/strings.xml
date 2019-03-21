@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Intent Mail</string>
+    <string name="lblPara">Para:</string>
+    <string name="lblAsunto">Asunto:</string>
+    <string name="lblMensaje">Mensaje:</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="placeholderPara">ejemplo@mail.com</string>
+    <string name="placeholderAsunto">Asunto</string>
+    <string name="placeholderMensaje">Mensaje</string>
+</resources>
