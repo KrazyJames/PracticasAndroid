@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         (findViewById(R.id.btnLlamar)).setOnClickListener(this);
-        (findViewById(R.id.btnOtro)).setOnClickListener(this);
+        (findViewById(R.id.btnCamara)).setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this,"Inserte un numero de 10 digitos",Toast.LENGTH_LONG).show();
             }
         }
-        if(v.getId()==R.id.btnOtro){
-            Intent otro = new Intent(getApplicationContext(), mx.itson.intents.otro.class);
-            startActivity(otro);
+        if(v.getId()==R.id.btnCamara){
+            Intent camera = new Intent(getApplicationContext(), mx.itson.intents.CameraActivity.class);
+            startActivity(camera);
         }
     }
 
