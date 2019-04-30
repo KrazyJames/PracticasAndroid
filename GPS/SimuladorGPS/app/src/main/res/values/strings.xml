@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimuladorGPS</string>
+    <string name="map_key" translatable="false">AIzaSyCO7_cCj6n-M9WPj0U6GcEAwX4Oemk03FE</string>
+</resources>
