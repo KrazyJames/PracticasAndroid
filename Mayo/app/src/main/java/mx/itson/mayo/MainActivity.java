@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        actualizarLista();
     }
 
     private void actualizarLista() {
