@@ -42,7 +42,7 @@ public class Usuario {
     public List<Usuario> getAll(){
         List<Usuario> usuarios = new ArrayList<>();
         try{
-            MayoDB mayoDB = new MayoDB(context, nombre, null, 1);
+            MayoDB mayoDB = new MayoDB(context, "MayoDB", null, 1);
             SQLiteDatabase sqLiteDatabase = mayoDB.getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("SELECT id, nombre, telefono, correo FROM usuario", null);
             while (cursor.moveToNext()){

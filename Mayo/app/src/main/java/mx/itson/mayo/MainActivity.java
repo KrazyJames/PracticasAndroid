@@ -3,10 +3,14 @@ package mx.itson.mayo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import mx.itson.mayo.database.MayoDB;
+import java.util.ArrayList;
+import java.util.List;
+
 import mx.itson.mayo.entidades.Usuario;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new MayoDB(getApplicationContext(), "MayoDB", null, 1);
         final EditText etNombre = findViewById(R.id.etNombre);
         final EditText etCorreo = findViewById(R.id.etCorreo);
         final EditText etTelefono = findViewById(R.id.etTelefono);
@@ -27,10 +30,31 @@ public class MainActivity extends AppCompatActivity {
                         !etTelefono.getText().toString().isEmpty()){
                     Usuario u = new Usuario(getApplicationContext());
                     u.guardar(etNombre.getText().toString(),etTelefono.getText().toString(), etCorreo.getText().toString());
+                    actualizarLista();
+                    etNombre.setText("");
+                    etCorreo.setText("");
+                    etTelefono.setText("");
+                    List<Usuario> usuarios = new Usuario(getApplicationContext()).getAll();
+                    Toast.makeText(getApplicationContext(),
+                            "Se añadió correctamente: " + usuarios.get(usuarios.size()-1).getNombre(),
+                            Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getApplicationContext(), "Faltan datos", Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+
+    private void actualizarLista() {
+        List<Usuario> usuarios = new Usuario(getApplicationContext()).getAll();
+        ListView lista = findViewById(R.id.lvLista);
+        List<String> nombres = new ArrayList<>();
+        for (int i = 0; i < usuarios.size(); i++) {
+            nombres.add(usuarios.get(i).getNombre());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,
+                nombres);
+        lista.setAdapter(adapter);
     }
 }
