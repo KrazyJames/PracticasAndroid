@@ -16,19 +16,22 @@
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombre"/>
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"/>
 
         <EditText
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/correo"/>
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/telefono"/>
+            android:hint="@string/telefono"
+            android:inputType="phone"/>
 
     </LinearLayout>
 
