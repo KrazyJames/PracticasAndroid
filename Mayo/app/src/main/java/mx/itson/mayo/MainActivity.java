@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     etTelefono.setText("");
                     List<Usuario> usuarios = new Usuario(getApplicationContext()).getAll();
                     Toast.makeText(getApplicationContext(),
-                            "Se añadió correctamente: " + usuarios.get(usuarios.size()-1).getNombre(),
-                            Toast.LENGTH_LONG).show();
+                            "Se añadió correctamente: " + usuarios.get(usuarios.size()-1).getNombre(), Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getApplicationContext(), "Faltan datos", Toast.LENGTH_LONG).show();
                 }
@@ -50,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         List<Usuario> usuarios = new Usuario(getApplicationContext()).getAll();
         ListView lista = findViewById(R.id.lvLista);
         List<String> nombres = new ArrayList<>();
-        for (int i = 0; i < usuarios.size(); i++) {
-            nombres.add(usuarios.get(i).getNombre());
+        for (Usuario u : usuarios){
+            nombres.add(u.getNombre());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
