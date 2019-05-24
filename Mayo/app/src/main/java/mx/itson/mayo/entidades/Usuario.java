@@ -39,6 +39,17 @@ public class Usuario {
         }
     }
 
+    public void borrar(int id){
+        try{
+            MayoDB mayoDB = new MayoDB(context, "MayoDB", null, 1);
+            SQLiteDatabase baseDatos = mayoDB.getReadableDatabase();
+            baseDatos.execSQL("DELETE * FROM usuario WHERE id="+id+"");
+            baseDatos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public List<Usuario> getAll(){
         List<Usuario> usuarios = new ArrayList<>();
         try{
